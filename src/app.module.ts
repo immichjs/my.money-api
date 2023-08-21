@@ -12,6 +12,9 @@ import { Income } from './entities/income'
 import { Payment } from './entities/payment'
 import { TypeOfExpense } from './entities/typeOfExpense'
 import { TypeOfIncome } from './entities/typeOfIncome'
+import { Account } from './entities/account'
+import { AccountsModule } from './modules/account/accounts.module'
+import { AccountType } from './entities/accountType'
 
 @Module({
   imports: [
@@ -24,6 +27,8 @@ import { TypeOfIncome } from './entities/typeOfIncome'
       database: 'my.money',
       entities: [
         User,
+        Account,
+        AccountType,
         Phone,
         Asset,
         Benefits,
@@ -38,6 +43,7 @@ import { TypeOfIncome } from './entities/typeOfIncome'
       synchronize: true,
     }),
     UsersModule,
+    AccountsModule,
   ],
   controllers: [],
   providers: [],
